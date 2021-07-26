@@ -32,7 +32,7 @@ def a_romano(n):
     descomponer n en millares, centenas, decenas y unidades
     traducir millares, centenas, decenas y unidades
     concatenar millares, centenas, decenas y unidades
-"""
+   """
 
     validar(n)
     c = str(n)
@@ -59,6 +59,4 @@ def a_romano(n):
 
 
     return simbolos['millares'][millares] + simbolos['centenas'][centenas] + simbolos['decenas'][decenas] + simbolos['unidades'][unidades]
-
-
 

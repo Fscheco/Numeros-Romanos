@@ -1,5 +1,5 @@
 import unittest
-from a_numero import a_numero
+from Numero import a_numero
 
 
 
@@ -23,7 +23,33 @@ class RomanosTests(unittest.TestCase):
         self.assertEqual(a_numero('CD'), 400)
         self.assertEqual(a_numero('CM'), 900)
         with self.assertRaises(ValueError):
-            a_numero()
+            a_numero('IL')
+        with self.assertRaises(ValueError):
+            a_numero('XM')
+
+
+    def test_no_mas_de_tres_repeticiones(self):
+        self.assertEqual(a_numero('III'), 3)
+        with self.assertRaises(ValueError):
+            a_numero('IIII')
+
+    def test_no_resta_numeros_iguales(self):
+        with self.assertRaises(ValueError):
+            a_numero('CCM')
+        with self.assertRaises(ValueError):
+            a_numero('XXL')
+
+    def test_no_se_puede_repetir_V_L_D(self):
+        with self.assertRaises(ValueError):
+            a_numero('VV')
+
+    def test_no_se_pueden_hacer_2_restas_seguidas(self):
+        with self.assertRaises(ValueError):
+            a_numero('MIXC')
+
+
+    
+
 
 
 
